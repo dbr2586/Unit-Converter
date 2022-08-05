@@ -10,7 +10,7 @@ inputText.addEventListener("input", function() {
         inputText.value = "Calm down!"
         inputButton.textContent = "😲"
         inputButton.style.fontSize = "30px"
-        inputText.style.fontSize = "30px"
+        inputText.style.fontSize = "15px"
     } else if (fontSizeReferenceValue > 99999999999) {
         inputText.style.fontSize = "7x"
     } else if (fontSizeReferenceValue > 999999) {
