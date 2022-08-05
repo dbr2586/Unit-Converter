@@ -5,7 +5,7 @@ let inputButton = document.getElementById("convert-button")
 
 inputText.addEventListener("input", function() {
     let fontSizeReferenceValue = inputText.value
-    if (fontSizeReferenceValue > 999999999999) { 
+    if (fontSizeReferenceValue > 99999999999) { 
         inputText.type = "text"
         inputText.value = "Calm down!"
         inputButton.textContent = "😲"
