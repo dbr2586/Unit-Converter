@@ -1,7 +1,35 @@
 let inputText = document.getElementById("input")
 inputText.value = ""
 
+
 let inputButton = document.getElementById("convert-button")
+
+let lengthOutput = document.getElementById("length-output") 
+let volumeOutput = document.getElementById("volume-output") 
+let massOutput = document.getElementById("mass-output") 
+
+
+
+const valueFromLocalStorage = localStorage.getItem("lastValue")
+
+if (valueFromLocalStorage) {
+    inputText.value = valueFromLocalStorage
+    console.log("hello!")
+    renderOutput()
+}
+
+function renderOutput(){
+    lengthOutput.textContent = `${inputText.value} meters = ${(inputText.value * 3.281).toFixed(3)} feet | 
+        ${inputText.value} feet = ${(inputText.value / 3.281).toFixed(3)} meters`
+
+    volumeOutput.textContent = `${inputText.value} liters = ${(inputText.value * 0.264172).toFixed(3)} gallons |
+         ${inputText.value} gallons = ${(inputText.value * 3.785411784).toFixed(3)} liters`
+
+    massOutput.textContent = `${inputText.value} kilograms = ${(inputText.value * 2.2046226218).toFixed(3)} pounds | 
+        ${inputText.value} pounds = ${(inputText.value * .45359237).toFixed(3)} kilograms`
+    
+    localStorage.setItem("lastValue", inputText.value)
+}
 
 inputText.addEventListener("input", function() {
     let fontSizeReferenceValue = inputText.value.length
@@ -30,9 +58,7 @@ inputText.addEventListener("input", function() {
     fontSizeReferenceValue = 0 }) 
 
 
-  let lengthOutput = document.getElementById("length-output") 
-  let volumeOutput = document.getElementById("volume-output") 
-  let massOutput = document.getElementById("mass-output") 
+ 
 
 inputButton.addEventListener("click", function() {
     if (inputText.value === "") {
@@ -43,13 +69,6 @@ inputButton.addEventListener("click", function() {
         massOutput.textContent =   "😲😲😲😲😲😲😲😲"
 
     } else {
-        lengthOutput.textContent = `${inputText.value} meters = ${(inputText.value * 3.281).toFixed(3)} feet | 
-            ${inputText.value} feet = ${(inputText.value / 3.281).toFixed(3)} meters`
-
-        volumeOutput.textContent = `${inputText.value} liters = ${(inputText.value * 0.264172).toFixed(3)} gallons |
-             ${inputText.value} gallons = ${(inputText.value * 3.785411784).toFixed(3)} liters`
-
-        massOutput.textContent = `${inputText.value} kilograms = ${(inputText.value * 2.2046226218).toFixed(3)} pounds | 
-            ${inputText.value} pounds = ${(inputText.value * .45359237).toFixed(3)} kilograms`
+        renderOutput()
     }})
 
