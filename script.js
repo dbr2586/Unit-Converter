@@ -4,18 +4,18 @@ inputText.value = ""
 let inputButton = document.getElementById("convert-button")
 
 inputText.addEventListener("input", function() {
-    let fontSizeReferenceValue = inputText.value
-    if (fontSizeReferenceValue > 99999999999) { 
+    let fontSizeReferenceValue = inputText.value.length
+    if (fontSizeReferenceValue > 11) { 
         inputText.type = "text"
         inputText.value = "Calm down!"
         inputButton.textContent = "😲"
         inputButton.style.fontSize = "30px"
         inputText.style.fontSize = "15px"
-    } else if (fontSizeReferenceValue > 99999999999) {
+    } else if (fontSizeReferenceValue > 10) {
         inputText.style.fontSize = "7x"
-    } else if (fontSizeReferenceValue > 999999) {
+    } else if (fontSizeReferenceValue > 6) {
         inputText.style.fontSize = "14px"
-    } else if (fontSizeReferenceValue > 999) {
+    } else if (fontSizeReferenceValue > 3) {
         inputText.style.fontSize = "28px"
     } else if (fontSizeReferenceValue > 0) {
         inputText.style.fontSize = "56px"
