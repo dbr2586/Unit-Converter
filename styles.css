@@ -27,7 +27,7 @@ body {
 #input-area-container {
     width: 550px;
     height: 285px;
-    background: #3B565B99;
+    background: #3B565B;
     display: flex;
     flex-flow: column wrap;
     align-items: center; 
